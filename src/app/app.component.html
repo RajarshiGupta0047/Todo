@@ -1,0 +1,28 @@
+<div>
+  <h1 class="app-title">Todo List</h1>
+  
+  </div>
+  <div class="container">
+    Hello!! I  am  Rajarshi. I  forget  my  daily  tasks  too  often  :(. If  u  r  like  me  too  Enjoy  scheduling  ur  tasks  here :)...
+    <br>
+    <input
+    type="text"
+    class="input-text"
+    placeholder="Type a todo task here "
+    [(ngModel)]="todoValue"
+    (keyup.enter)="addItem()"
+    
+    />
+    <button class="add-btn" (click)="addItem()">Add Task</button>
+    <div class="list">
+      <ul>
+        <li *ngFor="let item of list">  
+          <input type="checkbox" name="isDone" [(ngModel)]="item.isDone"/>
+          {{item.value}}
+
+          
+          <button class="btn" (click)="deleteItem(item.id)">Delete</button>
+          </li>
+        </ul>
+      </div>
+    </div>
